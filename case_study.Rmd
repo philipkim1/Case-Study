@@ -97,10 +97,12 @@ nyc_airbnb %>%
 
 ## retry leaflet
 
-```{r}
+```{r, eval = FALSE}
 nyc_airbnb %>% 
+  filter(price < 500) %>% 
+  sample_n(1000) %>% 
   leaflet() %>% 
-  addTiles() %>% 
-  addMarkers(~lat, ~long)
+   addTiles() %>% 
+   addMarkers(~lat, ~long)
 ```
 
